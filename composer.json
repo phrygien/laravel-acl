@@ -1,2 +1,47 @@
 {
+  "name": "mecene/laravel-acl",
+  "description": "Gestion des rôles et permissions pour Laravel 11/12",
+  "keywords": ["laravel", "roles", "permissions", "acl", "authorization"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mecene Phrygien",
+      "email": "mecenephrygien@gmail.com",
+      "homepage": "https://github.com/phrygien"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^11.0|^12.0",
+    "illuminate/database": "^11.0|^12.0",
+    "illuminate/auth": "^11.0|^12.0",
+    "illuminate/cache": "^11.0|^12.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^9.0|^10.0",
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MecenePhrygien\\LaravelAcl\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MecenePhrygien\\LaravelAcl\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MecenePhrygien\\LaravelAcl\\AclServiceProvider"
+      ],
+      "aliases": {
+        "Acl": "MecenePhrygien\\LaravelAcl\\Facades\\Acl"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
