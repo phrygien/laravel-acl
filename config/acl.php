@@ -6,6 +6,7 @@ return [
     'models' => [
         'role'       => MecenePhrygien\LaravelAcl\Models\Role::class,
         'permission' => MecenePhrygien\LaravelAcl\Models\Permission::class,
+        'auditlog' => YourName\LaravelAcl\Models\AuditLog::class,
     ],
 
     'tables' => [
@@ -25,15 +26,4 @@ return [
         'login'     => '/login',
         'forbidden' => '/403',
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | UI Panel
-    |--------------------------------------------------------------------------
-    */
-        'ui' => [
-            'enabled'    => true,
-            'prefix'     => 'acl',          // URL: /acl/dashboard
-            'middleware' => ['web', 'auth'], // Protéger le panel
-        ],
 ];
