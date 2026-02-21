@@ -18,6 +18,16 @@ class AclServiceProvider extends ServiceProvider
         $this->registerPublishables();
         $this->registerMiddleware();
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'acl');
+        $this->registerRoutes();
+    }
+
+    private function registerRoutes(): void
+    {
+        if (config('acl.ui.enabled', true)) {
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        }
     }
 
     private function registerPublishables(): void
@@ -33,6 +43,10 @@ class AclServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../database/seeders' => database_path('seeders'),
         ], 'acl-seeders');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/acl'),
+        ], 'acl-views');
     }
 
     private function registerMiddleware(): void
