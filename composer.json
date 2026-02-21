@@ -1,44 +1,49 @@
 {
-  "name": "mecene/laravel-acl",
-  "description": "Gestion des rôles et permissions pour Laravel 11/12",
-  "keywords": ["laravel", "roles", "permissions", "acl", "authorization"],
+  "name": "yourname/laravel-acl",
+  "description": "Gestion des rôles et permissions pour Laravel 11/12 avec interface d'administration",
+  "keywords": [
+    "laravel", "roles", "permissions", "acl",
+    "authorization", "admin", "ui"
+  ],
   "type": "library",
   "license": "MIT",
   "authors": [
     {
       "name": "Mecene Phrygien",
-      "email": "mecenephrygien@gmail.com",
-      "homepage": "https://github.com/phrygien"
+      "email": "you@example.com",
+      "homepage": "https://github.com/mecenephrygien"
     }
   ],
   "require": {
     "php": "^8.2",
-    "illuminate/support": "^11.0|^12.0",
+    "illuminate/support":  "^11.0|^12.0",
     "illuminate/database": "^11.0|^12.0",
-    "illuminate/auth": "^11.0|^12.0",
-    "illuminate/cache": "^11.0|^12.0"
+    "illuminate/auth":     "^11.0|^12.0",
+    "illuminate/cache":    "^11.0|^12.0",
+    "illuminate/routing":  "^11.0|^12.0",
+    "illuminate/view":     "^11.0|^12.0"
   },
   "require-dev": {
     "orchestra/testbench": "^9.0|^10.0",
-    "phpunit/phpunit": "^11.0"
+    "phpunit/phpunit":     "^11.0"
   },
   "autoload": {
     "psr-4": {
-      "MecenePhrygien\\LaravelAcl\\": "src/"
+      "YourName\\LaravelAcl\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MecenePhrygien\\LaravelAcl\\Tests\\": "tests/"
+      "YourName\\LaravelAcl\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "MecenePhrygien\\LaravelAcl\\AclServiceProvider"
+        "YourName\\LaravelAcl\\AclServiceProvider"
       ],
       "aliases": {
-        "Acl": "MecenePhrygien\\LaravelAcl\\Facades\\Acl"
+        "Acl": "YourName\\LaravelAcl\\Facades\\Acl"
       }
     }
   },
